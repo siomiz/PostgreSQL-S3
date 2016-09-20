@@ -8,8 +8,7 @@ RUN apk -U add py-pip postgresql gnupg coreutils \
 WORKDIR /workdir
 
 COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/bin/sh", "/entrypoint.sh"]
 
 CMD ["echo", "* done!"]
